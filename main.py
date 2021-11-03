@@ -42,11 +42,7 @@ class Stack:
             else:
                 return False
         return len(stack) == 0
-
-
-
-
-
+    ### this function will check parentheses and see if they are balanced or not
 
 
 
