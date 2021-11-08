@@ -29,7 +29,8 @@ class Stack:
     ## will tell the the number of items in the list
 
 
-
+####exercise 2 solution
+### this function will check parentheses and see if they are balanced or not
 def check(list):
     stack = Stack()
     parentheses = {"{": "}", "(": ")", "[": "]"}
@@ -42,7 +43,6 @@ def check(list):
         else:
             return False
     return stack.size() == 0
-### this function will check parentheses and see if they are balanced or not
 
 
 
