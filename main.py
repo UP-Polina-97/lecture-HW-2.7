@@ -1,18 +1,16 @@
 
 #class for exerice 1
 class Stack:
-    items = []
     def __init__(self):
         self.items = []
 
     def isEmpty(self):
-        return self.items == []
+        return self.items == 0
     #will check if the list id emplty, if it emplty it will say "True"
     # and if its not emplty it will say "False"
 
-    def push (self, item):
+    def push(self, item):
         self.items.append(item)
-        print(self.items)
         #this one push new item into the list as the last item
 
     def pop(self):
@@ -31,20 +29,21 @@ class Stack:
     ## will tell the the number of items in the list
 
 
-### this function will check parentheses and see if they are balanced or not
 
 def check(list):
-    stack = Stack.items
+    stack = Stack()
     parentheses = {"{": "}", "(": ")", "[": "]"}
 
     for item in list:
         if item in "{[(":
-            stack.append(item)
-        elif stack and item == parentheses[stack[-1]]:
+            stack.push(item)
+        elif stack.items and item == parentheses[stack.items[-1]]:
             stack.pop()
         else:
             return False
-    return len(stack) == 0
+    return stack.size() == 0
+### this function will check parentheses and see if they are balanced or not
+
 
 
 ## to check how exerise 1 turns out
@@ -56,7 +55,12 @@ if __name__ == "__main__":
     stack.push('8')
     stack.push('6')
     stack.pop()
+    print('-------------')
+    print(check("(((([{}]))))"))
+    print('-------------')
     print(stack.size())
     print(stack.peek())
     print(stack.isEmpty())
+    print(stack.items)
+
 
