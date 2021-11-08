@@ -1,6 +1,7 @@
 
 #class for exerice 1
 class Stack:
+    items = []
     def __init__(self):
         self.items = []
 
@@ -19,7 +20,6 @@ class Stack:
             return self.items.pop()
         else:
             return None
-
     # will pop the last item in the list out of the list
 
     def peek(self):
@@ -30,20 +30,21 @@ class Stack:
         return len(self.items)
     ## will tell the the number of items in the list
 
-    def check(self, list):
-        stack = []
-        parentheses = {"{": "}", "(": ")", "[": "]"}
 
-        for item in list:
-            if item in "{[(":
-                stack.append(item)
-            elif stack and item == parentheses[stack[-1]]:
-                stack.pop()
-            else:
-                return False
-        return len(stack) == 0
-    ### this function will check parentheses and see if they are balanced or not
+### this function will check parentheses and see if they are balanced or not
 
+def check(list):
+    stack = Stack.items
+    parentheses = {"{": "}", "(": ")", "[": "]"}
+
+    for item in list:
+        if item in "{[(":
+            stack.append(item)
+        elif stack and item == parentheses[stack[-1]]:
+            stack.pop()
+        else:
+            return False
+    return len(stack) == 0
 
 
 ## to check how exerise 1 turns out
